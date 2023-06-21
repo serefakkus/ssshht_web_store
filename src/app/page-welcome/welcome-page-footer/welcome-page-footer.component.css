@@ -1,0 +1,10 @@
+.grid-container-1 {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.footer {
+  height: 5%;
+  background-color:rgba(0, 0, 0, 0.05);
+}

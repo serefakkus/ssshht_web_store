@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "ws://reklam.ssshht.com",
+    "secure": false
+  }
+}

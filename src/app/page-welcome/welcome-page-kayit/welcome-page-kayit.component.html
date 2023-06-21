@@ -1,0 +1,56 @@
+<div class="navbar">
+  <div class="container-fluid">
+    <div></div>
+    <form>
+      <div class="mb-3">
+        <label for="kayit_phone_no" class="form-label">Telefon Numarasi</label>
+        <input [disabled]="IsDisabledPhoneText" id="kayit_phone_no" type="number" [(ngModel)]="loginUser.no"
+          class="form-control" (input)="phoneControl()" name="kayit_phone_no" aria-describedby="phoneHelp">
+        <div id="phoneHelp" class="form-text">Telefon numaranızı başında "0" olmadan 10 hane olacak şekilde yazınız
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="kayit_kod" class="form-label">KOD</label>
+        <div class="grid-container">
+          <input id="kayit_kod" [(ngModel)]="loginUser.code" [disabled]="IsDisabledKodText" (input)="codeControl()"
+            maxlength="5" minlength="5" type="number" class="form-control " name="kayit_kod">
+          <button id="kod_gonder_button" [disabled]="isDisabledKodButton" (click)="codeSend()" type="submit"
+            class="btn btn-primary">KOD<br>GÖNDER</button>
+        </div>
+      </div>
+      <div class="mb-3" *ngIf="IsOnay">
+        <label for="yeni_sifre" class="form-label">Yeni şifre</label>
+        <div class="grid-container">
+          <input [type]="IsPassHide ? 'password' : 'text'" id="yeni_sifre" type="password"
+            [(ngModel)]="loginUser.newPass" class="form-control sign-up-pass" (input)="phoneControl()" name="yeni_sifre"
+            aria-describedby="passHelp">
+          <button class="eye-button" (click)="passEyeClick()">
+            <mat-icon>remove_red_eye</mat-icon>
+          </button>
+        </div>
+        <div id="passHelp" class="form-text">Şifre en az 6 hane olmalıdır
+        </div>
+      </div>
+      <div class="mb-3" *ngIf="IsOnay">
+        <label for="yeni_sifre_tekrar" class="form-label">Yeni şifre tekrar</label>
+        <div class="grid-container">
+          <input [type]="IsPassHideTekrar ? 'password' : 'text'" id="yeni_sifre_tekrar" type="password"
+            [(ngModel)]="loginUser.newPassTekrar" class="form-control  sign-up-pass" (input)="phoneControl()"
+            name="yeni_sifre_tekrar">
+          <button class="eye-button" (click)="passTekrarEyeClick()">
+            <mat-icon>remove_red_eye</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div *ngIf="!IsOnay">
+        <button id="onay_button_code" [disabled]="IsDisabledSendButton" (click)="sendSignUpCode()" type="submit"
+          class="btn btn-primary center-button">ONAY</button>
+      </div>
+    </form>
+    <div></div>
+  </div>
+</div>
+<div *ngIf="IsOnay">
+  <button id="onay_button" [disabled]="IsDisabledSendButton" (click)="sendSignUp()" type="submit"
+    class="btn btn-primary center-button">KAYIT OL</button>
+</div>

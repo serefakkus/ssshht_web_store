@@ -1,0 +1,26 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <div></div>
+    <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist"
+      style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active rounded-5" id="giris-tab" data-bs-toggle="tab" data-bs-target="#giris-tab-pane"
+          type="button" role="tab" aria-controls="giris-tab-pane" aria-selected="false">GİRİŞ YAP</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link rounded-5" id="kayit-tab" data-bs-toggle="tab" data-bs-target="#kayit-tab-pane"
+          type="button" role="tab" aria-controls="kayit-tab-pane" aria-selected="true">KAYIT OL</button>
+      </li>
+    </ul>
+    <div></div>
+  </div>
+</nav>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="giris-tab-pane" role="tabpanel" aria-labelledby="giris-tab" tabindex="0">
+    <app-welcome-page-giris></app-welcome-page-giris>
+  </div>
+  <div class="tab-pane fade  show " id="kayit-tab-pane" role="tabpanel" aria-labelledby="kayit-tab" tabindex="0">
+    <app-welcome-page-kayit></app-welcome-page-kayit>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="navbar">
+  <div class="container-fluid">
+    <div></div>
+    <form #loginForm="ngForm">
+      <div class="mb-3">
+        <label for="giris_phone_no" class="form-label">Telefon Numarasi</label>
+        <input type="number" class="form-control" id="giris_phone_no" (input)="formControl()" name="giris_phone_no"
+          [(ngModel)]="loginUser.no" aria-describedby="phoneHelp" required>
+        <div id="phoneHelp" class="form-text">Telefon numaranızı başında "0" olmadan 10 hane olacak şekilde yazınız
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="giris_sifre" class="form-label">Şifre</label>
+        <div class="grid-container">
+          <input [type]="IsPassHide ? 'password' : 'text'" type="password" class="form-control" id="giris_sifre"
+            (input)="formControl() " name="giris_sifre" [(ngModel)]="loginUser.sifre" required>
+          <button class="eye-button" (click)="passEyeClick()">
+            <mat-icon>remove_red_eye</mat-icon>
+          </button>
+        </div>
+        <div id="passHelp" class="form-text">Şifre en az 6 hane olmalıdır
+        </div>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="beni_hatirla" name="beni_hatirla"
+          [(ngModel)]="loginUser.beniHatirla">
+        <label class="form-check-label" for="beni_hatirla">BENİ HATIRLA</label>
+      </div>
+      <button [disabled]="isDisabledGiris" type="submit" class="btn btn-primary center-button"
+        (click)="sendSignUp()">GİRİŞ YAP</button>
+    </form>
+    <div></div>
+  </div>
+</div>

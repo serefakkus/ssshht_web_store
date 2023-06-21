@@ -1,0 +1,57 @@
+#kod_gonder_button {
+  font-size: 12px;
+  border-radius: 10%;
+  background-color: rgb(34, 206, 34);
+}
+
+#kayit_phone_no {
+  padding: 3%;
+}
+
+#kayit_kod {
+  width: 70%;
+  grid-gap: 20px;
+  padding: 3%;
+}
+
+.center-button {
+  font-size: 20px;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 10%;
+  width: 50%;
+  line-height: 200%;
+}
+
+.eye-button {
+  padding: 7%;
+  border-radius: 25%;
+  width: 50%;
+  margin-left: 20%;
+}
+
+.sign-up-pass {
+  width: 150;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+@media (min-aspect-ratio: 1/1) {
+  .center-button {
+    font-size: 20px;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 5%;
+    width: 20%;
+    line-height: 200%;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
