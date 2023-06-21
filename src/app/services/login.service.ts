@@ -68,7 +68,4 @@ export class LoginService {
     return ok
   }
 
-  saveToken ( ) {
-    localStorage.setItem("auth")
-  }
 }
